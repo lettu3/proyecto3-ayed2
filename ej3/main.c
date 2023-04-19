@@ -6,7 +6,14 @@
 
 #define MAX_SIZE 1000
 
-
+static void dump(char a[], unsigned int length) {
+    printf("\"");
+    for (unsigned int j=0u; j < length; j++) {
+        printf("%c", a[j]);
+    }
+    printf("\"");
+    printf("\n\n");
+}
 
 int main(int argc, char *argv[]) {
     char *path = NULL;

@@ -21,11 +21,5 @@ unsigned int data_from_file
     Returns the length of the array.
 */
 
-static void dump
-(char a[], unsigned int length);
-/*
-    Write the content of the array 'a' into stdout. The array 'a' must have
-    exactly 'length' elements.
-*/
 
 #endif

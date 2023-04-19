@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#define MAX_SIZE 1000
+#include "phrase_helpers.h"
 
 char *parse_filepath(int argc, char *argv[]){
     char *result = NULL;
@@ -11,15 +11,6 @@ char *parse_filepath(int argc, char *argv[]){
     }
     result = argv[1];
     return result;
-}
-
-static void dump(char a[], unsigned int length) {
-    printf("\"");
-    for (unsigned int j=0u; j < length; j++) {
-        printf("%c", a[j]);
-    }
-    printf("\"");
-    printf("\n\n");
 }
 
 unsigned int data_from_file(const char *path, unsigned int indexes[], char letters[], unsigned int max_size){
@@ -35,7 +26,7 @@ unsigned int data_from_file(const char *path, unsigned int indexes[], char lette
     
     while (feof(file) == 0 && i < max_size){    //vamos a leer el archivo hasta que feof retorne un valor que no sea cero;
         fscanf(file, "%i -> *%c*\n", &indexes[i], &char_value); //guarda los valores;
-        if (indexes[i] > MAX_SIZE){
+        if (indexes[i] > max_size){
             fprintf(stderr, "Invalid array index at the line %i\n", i+1);
             exit(EXIT_FAILURE);
         }
@@ -48,3 +39,4 @@ unsigned int data_from_file(const char *path, unsigned int indexes[], char lette
     return i;
 
 }
+
