@@ -18,9 +18,13 @@ typedef struct _person {
  */
 int main(void) {
 
+    int *p = NULL;
+    char *q = NULL;
     int x = 1;
     person_t m = {90, 'M'};
     int a[] = {0, 1, 2, 3};
+
+
 
     /* Completar aquí:
        Al finalizar la ejecución las variables deben tener los siguientes valores
@@ -34,7 +38,16 @@ int main(void) {
        - Se pueden declarar hasta 2 punteros.
        AYUDA: podes usar GDB para consultares valores de variables y la dirección de memoria donde estan alojadas.
     */
+    p = &x;
+    *p = 9;
 
+    p = &(a[1]);
+    *p = 42;
+
+    p = &(m.age);
+    *p = 100;
+    q = &(m.name_initial);
+    *q = 'F';
     printf("x = %d\n", x);
     printf("m = (%d, %c)\n", m.age, m.name_initial);
     printf("a[1] = %d\n", a[1]);
