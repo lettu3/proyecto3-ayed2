@@ -107,3 +107,6 @@ int main(int argc, char *argv[]) {
     assert(array_is_permutation_of(copy, atp, length));
     return (EXIT_SUCCESS);
 }
+
+
+//cpu time used to sort the array: 0.095186 seconds.
