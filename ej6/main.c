@@ -108,3 +108,6 @@ int main(int argc, char *argv[]) {
     destroy(atp, length);
     return (EXIT_SUCCESS);
 }
+
+//cpu time used to sort the array: 0.032243 seconds. 
+//this is 0.062943 faster than the previous version (aprox %66 faster)
